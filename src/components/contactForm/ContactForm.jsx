@@ -26,11 +26,12 @@ state = {
             id: nanoid(),
             name: this.state.name,
             number: this.state.number
-    };
+      };
+      
+      const normolizeNewContact = newContact.name.toLowerCase();
     
 const contactExists = this.props.contacts.some(
-    (contact) => contact.name === newContact.name
-  );
+    (contact) => contact.name.toLowerCase() === normolizeNewContact);
 
   if (contactExists) {
     alert(`${newContact.name} is already in contacts.`);
